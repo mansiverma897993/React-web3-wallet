@@ -16,19 +16,21 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 function App() {
   //creating my own rpc url through Alchemy
   return (
-    <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
+    <div>
+    <ConnectionProvider endpoint={"https://solana-devnet.g.alchemy.com/v2/3kUlu3VqPb6xr1h2FnHug"}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
           <WalletMultiButton></WalletMultiButton>
           <WalletDisconnectButton></WalletDisconnectButton>
         <div>
-          hi there
+          Hi Fam!
         </div>
         <Airdrop>
         </Airdrop>
       </WalletModalProvider>
     </WalletProvider>
         </ConnectionProvider>
+        </div>
   )
 }
 

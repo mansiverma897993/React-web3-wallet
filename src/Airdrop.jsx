@@ -7,7 +7,7 @@ export function Airdrop() {
     const { connection } = useConnection();
 
     async function sendAirdropToUser() {
-        await connection.requestAirdrop(wallet.publicKey, 10);
+        await connection.requestAirdrop(wallet.publicKey, 10000000000000);
         alert("Airdrop Successful");
     }
   return (

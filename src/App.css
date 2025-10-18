@@ -1,42 +1,114 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* === Basic setup === */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1e002e, #240046, #3c096c);
+  background-size: 200% 200%;
+  animation: bgmove 8s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes bgmove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Faucet card === */
+.faucet-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 40px 50px;
+  width: 370px;
   text-align: center;
+  color: white;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* === Title === */
+.faucet-card h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* === Wallet buttons === */
+.wallet-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.wallet-buttons button {
+  width: 100%;
+  font-size: 14px;
+  border-radius: 12px !important;
+  font-weight: 500;
 }
 
-.card {
-  padding: 2em;
+/* === Airdrop container === */
+.airdrop-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-.read-the-docs {
-  color: #888;
+/* === Input field === */
+.airdrop-container input {
+  width: 130px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 14px;
+}
+
+.airdrop-container input::placeholder {
+  color: #ddd;
+}
+
+/* === Send button === */
+.airdrop-container button {
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.airdrop-container button:hover {
+  background: linear-gradient(135deg, #9f67ff, #a779ff);
+  transform: translateY(-2px);
+}
+
+/* === Wallet Adapter Button override (for Solana wallet buttons) === */
+.wallet-adapter-button {
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6) !important;
+  color: white !important;
+  font-weight: 500 !important;
+  border-radius: 12px !important;
+  padding: 10px 16px !important;
+  transition: 0.3s ease !important;
+}
+
+.wallet-adapter-button:hover {
+  background: linear-gradient(135deg, #9f67ff, #b48cff) !important;
+  transform: translateY(-1px);
 }
